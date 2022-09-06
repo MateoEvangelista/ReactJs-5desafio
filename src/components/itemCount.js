@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function itemCount({ stock, initial, onAdd }) {
+function ItemCount({ stock, initial, onAdd }) {
   const [counter, setCounter] = useState(initial);
 
   const handlerCounterUp = () => {
@@ -34,4 +34,4 @@ function itemCount({ stock, initial, onAdd }) {
   );
 }
 
-export default itemCount;
+export default ItemCount;

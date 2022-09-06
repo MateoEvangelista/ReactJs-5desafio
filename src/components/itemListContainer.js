@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
-import item from "./item";
+import ItemList from "./itemList";
 
-const ListContainer = () => {
+const ItemListContainer = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
+    fetch("https://fakestoreapi.com/products?limit=2")
       .then((response) => response.json())
       .then((json) => setUsers(json));
   }, []);
 
   return (
     <div>
-      {users.map((user) => {
-        return <item key={user.id} data={user} />;
-      })}
+      <ItemList users={users} />;
     </div>
   );
 };
 
-export default ListContainer;
+export default ItemListContainer;
